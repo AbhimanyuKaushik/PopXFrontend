@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useNavigate } from "react";
 import "./SignUp.css";
 
 function SignUp() {
@@ -10,6 +10,8 @@ function SignUp() {
     company: "",
     isAgency: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +31,7 @@ function SignUp() {
       const data = await res.json();
       if (res.ok) {
         alert("Account created successfully!");
+        navigate("/Login"); 
       } else {
         alert(data.message || "Something went wrong");
       }

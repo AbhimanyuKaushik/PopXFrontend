@@ -24,7 +24,7 @@ function Login() {
       if (res.ok) {
         localStorage.setItem("user", JSON.stringify(data.user));
         alert("Login successful!");
-        navigate("/Profile"); // ✅ navigate AFTER successful login
+        navigate("/Profile"); 
       } else {
         alert(data.message || "Invalid credentials");
       }
