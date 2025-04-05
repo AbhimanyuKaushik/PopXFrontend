@@ -1,4 +1,5 @@
-import React, { useState,useNavigate } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
 function SignUp() {
@@ -22,16 +23,19 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://popxbackend.onrender.com/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://popxbackend.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
       if (res.ok) {
         alert("Account created successfully!");
-        navigate("/Login"); 
+        navigate("/Login");
       } else {
         alert(data.message || "Something went wrong");
       }
