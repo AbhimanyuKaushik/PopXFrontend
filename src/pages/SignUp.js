@@ -20,7 +20,7 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://popx-70g1.onrender.com/api/auth/register", {
+      const res = await fetch("https://popxbackend.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

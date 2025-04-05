@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://popx-70g1.onrender.com/api/auth/login", {
+      const res = await fetch("https://popxbackend.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
