@@ -1,0 +1,6 @@
+input + span{
+    position: absolute;
+    left: 2px;
+    top: -10px;
+    border: none;
+}
